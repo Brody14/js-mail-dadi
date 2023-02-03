@@ -25,10 +25,13 @@ if (choise === "mail") {
 
 	let message = "Non sei registrato";
 
-	if (userMail >= mailList) {
-		message = "Sei già dei nostri!";
-	}
+	for (let i = 0; i < mailList.length; i++) {
+		//console.log(i, mailList[i]);
 
+		if (userMail === mailList[i]) {
+			message = "Sei già dei nostri!";
+		}
+	}
 	// // STAMPARE ADEGUATO RISULTATO
 
 	printResult.innerHTML = message;
