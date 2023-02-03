@@ -1,4 +1,4 @@
-console.log("Tavarez");
+//console.log("Tavarez");
 
 // CREARE UN ARRAY CON E-MAIL
 
@@ -8,9 +8,11 @@ const mailList = [
 	"avramovic.a@gmail.com",
 	"zobradovic@thecoach.com",
 ];
-console.log(mailList);
+//console.log(mailList);
 // CHIEDERE A UTENTE SUA MAIL CON PROMPT
 
+const userMail = prompt("Inserisci il tuo indirizzo mail");
+console.log(userMail);
 // CONTROLLARE SE LA MAIL E' PRESENTE NEL MIO ARRAY
 
 // STAMPARE ADEGUATO RISULTATO
