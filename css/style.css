@@ -11,6 +11,8 @@ body {
 
 .container {
 	display: flex;
+    flex-direction: column;
+    gap: 50px;
 	justify-content: center;
 	align-items: center;
 	margin-top: 20px;
@@ -47,6 +49,8 @@ body {
 	height: 150px;
 }
 
+
+
 #box {
     display: flex;
     flex-direction: column;
@@ -67,10 +71,15 @@ body {
 	padding: 10px;
 }
 
-.d-none {
-    display: none;
+.btn__yes,
+.btn__no {
+    padding: 5px 10px;
 }
 
-.d-block {
-    display: block;
+.btn__yes {
+    margin-right: 10px;
+}
+
+.d-none {
+    display: none;
 }

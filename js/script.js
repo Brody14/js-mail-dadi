@@ -3,6 +3,9 @@
 // CREARE UN ARRAY CON E-MAIL
 let stampContainer = document.getElementById('box');
 const btnElement = document.querySelector('.btn');
+const play = document.querySelector('.play');
+const btnYes = document.querySelector('.btn__yes');
+const btnNo = document.querySelector('.btn__no');
 
 
 
@@ -33,8 +36,8 @@ btnElement.addEventListener('click', function (){
 		console.log(mailList)
 		addBtnElement.classList.toggle('d-none')
 		stampContainer.innerHTML = 'Ottimo! Ti sono stati addebitati 10.000€!'
+		play.classList.toggle('d-none')
 	})
-	
 
 	for (let i = 0; i < mailList.length; i++) {
 		//console.log(i, mailList[i]);
@@ -42,6 +45,7 @@ btnElement.addEventListener('click', function (){
 		if (mail === mailList[i]) {
 			message = "Sei già dei nostri!";
 			addBtnElement.classList.toggle('d-none')
+			play.classList.toggle('d-none');
 		} 
 	}
 	
@@ -56,21 +60,37 @@ btnElement.addEventListener('click', function (){
 
 // // GENERARE NUMERO RANDOM TRA 1 E 6 PER UTENTE E UNO PER PC
 // // dichiarare due variabili con numeri generati random, uno per uno
-// let randomUtente = Math.floor(Math.random() * 6 + 1);
-// let randomPc = Math.floor(Math.random() * 6 + 1);
 
-// console.log(randomUtente, randomPc);
+btnYes.addEventListener ('click', function () {
+	let randomUtente = Math.floor(Math.random() * 6 + 1);
+	play.innerHTML = `<div> Il tuo numero è: ${randomUtente} </div>`;
 
-// // STABILIRE IL VINCITORE
-// // confrontare quali tra i due è più altro
-// let gameMessage = "Hai perso!";
+	let randomPc = Math.floor(Math.random() * 6 + 1);
+	play.innerHTML += `<div> Il mio numero è: ${randomPc} </div>`;
+	console.log(randomUtente, randomPc);
 
-// if (randomUtente > randomPc) {
-// 	gameMessage = "Hai vinto!";
-// }
+	
+	// // STABILIRE IL VINCITORE
+	// // confrontare quali tra i due è più altro
+	let gameMessage = "Hai perso!";
+	
+	if (randomUtente > randomPc) {
+		gameMessage =  "Hai vinto!";
+	}
+	
+	// console.log(gameMessage);
+	
+	// // stampare se ha vinto o meno
+	
+	play.innerHTML += (gameMessage)
 
-// console.log(gameMessage);
+})
 
-// // stampare se ha vinto o meno
+btnNo.addEventListener ('click', function () {
+	
+	gameMessage = "Molti film horror iniziano così...!";
+	
+	play.innerHTML = (gameMessage)
 
-// alert(gameMessage);
+})
+
